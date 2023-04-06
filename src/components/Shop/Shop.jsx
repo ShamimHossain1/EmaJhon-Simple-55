@@ -5,6 +5,7 @@ import Product from '../Product/Product';
 const Shop = () => {
     //for fetch data
     const [products, setProduct] = useState([]);
+    // console.log(products.length)
 
     //put data to cart
     const [cart, setCart] = useState([]);
@@ -62,7 +63,7 @@ const Shop = () => {
                 }
 
             </div>
-            <div className="w-2/4 ml-8 ">
+            <div className="w-2/4 ml-8 bg-yellow-200 rounded-lg">
                 <Cart cart={cart}></Cart>
             </div>
         </div>

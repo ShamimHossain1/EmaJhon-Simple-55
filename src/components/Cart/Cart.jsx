@@ -18,8 +18,8 @@ const Cart = ({cart}) => {
     const grandTotal = total + totalShipping + tax
 
     return (
-        <div className=' relative'>
-                <div className='bg-yellow-500 p-10 rounded-xl shadow-lg fixed w-3/12 h-2/4 '>
+        <div className='sticky top-32  '>
+                <div className=' p-10 '>
                 <h4 className='text-4xl font-semibold mb-10 text-slate-800 text-center'>Order Summery</h4>
                 <p className='text-2xl font-semibold mb-4 text-slate-800'>Selected items {quantity}</p>
                 <p className='text-2xl font-semibold mb-4 text-slate-800'>Total Price: ${total} </p>
