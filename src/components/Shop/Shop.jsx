@@ -40,10 +40,6 @@ const Shop = () => {
     }, [products]) // set dependency for async reload (fetch)
 
 
-
-
-
-
     // get data to cart from product
     const handleAddToCart = (product) => {
         // every time new cart
