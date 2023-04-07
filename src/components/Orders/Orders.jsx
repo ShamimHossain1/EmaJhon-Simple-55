@@ -11,7 +11,7 @@ const Orders = () => {
                     <h1>Hello world </h1>
             </div>
             <div className="w-2/4 ml-8 bg-yellow-200 rounded-lg">
-                <Cart cart={[]} ></Cart>
+                <Cart cart={products} ></Cart>
             </div>
         </div>
     );

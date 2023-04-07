@@ -9,14 +9,24 @@ const cartProducts = async () => {
     const products = await loadedProducts.json();
 
     const storedCart = getShoppingCart();
+    const savedCart = [];
+
     for (const id in storedCart) {
         const addedProduct = products.find(pd => pd.id === id)
         if (addedProduct) {
-            const quantity = storedCart[id]
-
+            const quantity = storedCart[id];
+            addedProduct.quantity = quantity; 
+            savedCart.push(addedProduct); 
         }
     }
-    return products;
+
+    // if you want to return two things
+    // return [savedCart, savedCart];
+
+    // another option
+    // return {products, savedCart}
+
+    return savedCart;
 };
 
 export default cartProducts;
