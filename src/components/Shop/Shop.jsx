@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { addToDb, getShoppingCart } from '../../utilities/fakedb';
+import { addToDb, deleteShoppingCart, getShoppingCart } from '../../utilities/fakedb';
 import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
 const Shop = () => {
@@ -49,9 +49,15 @@ const Shop = () => {
         // data to db
         addToDb(product.id)
     }
+    
+   
+    const handleClearCart = () =>{
+        setCart([]);
+        deleteShoppingCart();
+    }
 
     return (
-        <div className='flex mt-10 px-10'>
+        <div className='flex  px-10'>
             <div className="grid grid-cols-3 gap-8 ">
                 {
                     products.map(product => <Product
@@ -63,8 +69,9 @@ const Shop = () => {
                 }
 
             </div>
-            <div className="w-2/4 ml-8 bg-yellow-200 rounded-lg">
-                <Cart cart={cart}></Cart>
+            <div className="w-2/5 ml-8 bg-orange-200 ">
+                <Cart cart={cart}
+                handleClearCart={handleClearCart}></Cart>
             </div>
         </div>
     );

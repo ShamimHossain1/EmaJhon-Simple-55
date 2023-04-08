@@ -1,6 +1,9 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowRight, faTrashAlt } from '@fortawesome/free-solid-svg-icons'
 
-const Cart = ({cart}) => {
+
+const Cart = ({cart, handleClearCart}) => {
     //const cart = props.cart; // o1
     //const {cart} = props; // o2
     //console.log(cart);
@@ -18,8 +21,8 @@ const Cart = ({cart}) => {
     const grandTotal = total + totalShipping + tax
 
     return (
-        <div className='sticky top-32  '>
-                <div className=' p-10 '>
+        <div className='sticky flex flex-col top-32     '>
+                <div className='p-10'>
                 <h4 className='text-4xl font-semibold mb-10 text-slate-800 text-center'>Order Summery</h4>
                 <p className='text-2xl font-semibold mb-4 text-slate-800'>Selected items {quantity}</p>
                 <p className='text-2xl font-semibold mb-4 text-slate-800'>Total Price: ${total} </p>
@@ -27,6 +30,15 @@ const Cart = ({cart}) => {
                 <p className='text-2xl font-semibold mb-4 text-red-700'>Tax ${tax.toFixed(2)}</p>
                 <h6 className='text-3xl font-semibold mb-2 text-green-700'>Grand Total: ${grandTotal.toFixed(2)} </h6>
                 </div>
+            <button onClick={handleClearCart} className='bg-red-500 mb-4 text-white flex justify-between items-center mx-4 p-3 rounded  active:scale-50 duration-1000'>
+                    <span>Clear Cart</span>
+                    <FontAwesomeIcon className='h-6' icon={faTrashAlt} />
+                    </button>
+                <button  className='bg-orange-500 text-white flex justify-between items-center mx-4  mb-96 p-3 rounded  active:scale-50 duration-1000'>
+                    <span> Review Orders</span>
+                    <FontAwesomeIcon className='h-6' icon={faArrowRight} />
+                    </button>
+              
         </div>
     );
 };

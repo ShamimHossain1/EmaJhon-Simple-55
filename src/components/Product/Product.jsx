@@ -9,7 +9,7 @@ const Product = (props) => {
     const handleAddToCart = props.handleAddToCart;
 
     return (
-        <div className='shadow-lg rounded-xl flex flex-col'>
+        <div className='shadow-lg rounded-xl mt-10 flex flex-col'>
             <img className='rounded-xl' src={img} alt="" />
             <div className='p-5'>
                 <h6 className='text-xl font-semibold'>{name}</h6>
