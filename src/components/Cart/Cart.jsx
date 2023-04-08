@@ -1,9 +1,9 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowRight, faTrashAlt } from '@fortawesome/free-solid-svg-icons'
+import {faTrashAlt } from '@fortawesome/free-solid-svg-icons'
 
 
-const Cart = ({cart, handleClearCart}) => {
+const Cart = ({cart, handleClearCart, children}) => {
     //const cart = props.cart; // o1
     //const {cart} = props; // o2
     //console.log(cart);
@@ -34,10 +34,7 @@ const Cart = ({cart, handleClearCart}) => {
                     <span>Clear Cart</span>
                     <FontAwesomeIcon className='h-6' icon={faTrashAlt} />
                     </button>
-                <button  className='bg-orange-500 text-white flex justify-between items-center mx-4  mb-96 p-3 rounded  active:scale-50 duration-1000'>
-                    <span> Review Orders</span>
-                    <FontAwesomeIcon className='h-6' icon={faArrowRight} />
-                    </button>
+                   {children}
               
         </div>
     );
